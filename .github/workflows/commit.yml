@@ -38,6 +38,9 @@ jobs:
           profile-type: MAC_APP_DEVELOPMENT
           bundle-identifiers: ca.hogtownsoftware.examples.HelloMac.HelloMac
 
+      - name: "Verify"
+        run: ls -l "/Users/runner/Library/MobileDevice/Provisioning Profiles/"
+
       - name: "Import Certificate: Distribution"
         uses: devbotsxyz/import-signing-certificate@main
         with:
