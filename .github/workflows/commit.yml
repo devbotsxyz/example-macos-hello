@@ -29,6 +29,15 @@ jobs:
           certificate-passphrase: ${{ secrets.DEVELOPMENT_CERTIFICATE_PASSPHRASE }}
           keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
 
+      - name: "Fetch Development Provisioning Profiles"
+        uses: st3fan/fetch-provisioning-profiles@main
+        with:
+          app-store-connect-key: ${{ secrets.APPSTORE_CONNECT_KEY }}
+          app-store-connect-key-id: ${{ secrets.APPSTORE_CONNECT_KEY_ID }}
+          app-store-connect-issuer: ${{ secrets.APPSTORE_CONNECT_ISSUER }}
+          profile-type: MAC_APP_DEVELOPMENT
+          bundle-identifiers: ca.hogtownsoftware.examples.HelloMac.HelloMac
+
       - name: "Import Certificate: Distribution"
         uses: devbotsxyz/import-signing-certificate@main
         with:
