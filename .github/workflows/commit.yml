@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: "Select latest Xcode 12"
-        uses: devbotsxyz/xcode-select@master
+        uses: devbotsxyz/xcode-select@v1
         with:
           version: "12"
 
@@ -41,7 +41,7 @@ jobs:
       #
 
       - name: "Test"
-        uses: devbotsxyz/xcode-test@v1
+        uses: devbotsxyz/xcode-test@main
 
       #
       # Do a developer build that we archive into an .xcarchive.
