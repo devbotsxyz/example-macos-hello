@@ -14,6 +14,7 @@
 		F82440F52541EF5500FF00F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82440F32541EF5500FF00F9 /* Main.storyboard */; };
 		F82441012541EF5600FF00F9 /* HelloMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82441002541EF5600FF00F9 /* HelloMacTests.swift */; };
 		F824410C2541EF5600FF00F9 /* HelloMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824410B2541EF5600FF00F9 /* HelloMacUITests.swift */; };
+		F824411E2541EFB400FF00F9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F824411D2541EFB400FF00F9 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		F82441072541EF5600FF00F9 /* HelloMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F824410B2541EF5600FF00F9 /* HelloMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMacUITests.swift; sourceTree = "<group>"; };
 		F824410D2541EF5600FF00F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F824411D2541EFB400FF00F9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F824411E2541EFB400FF00F9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 				F82440FF2541EF5600FF00F9 /* HelloMacTests */,
 				F824410A2541EF5600FF00F9 /* HelloMacUITests */,
 				F82440E82541EF5500FF00F9 /* Products */,
+				F824411C2541EFB400FF00F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +137,14 @@
 				F824410D2541EF5600FF00F9 /* Info.plist */,
 			);
 			path = HelloMacUITests;
+			sourceTree = "<group>";
+		};
+		F824411C2541EFB400FF00F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F824411D2541EFB400FF00F9 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
