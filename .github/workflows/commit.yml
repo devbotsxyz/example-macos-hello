@@ -1,0 +1,52 @@
+
+name: Foo
+
+on:
+  push:
+    branches: [work]
+
+jobs:
+  release:
+    runs-on: macos-10.15
+    timeout-minutes: 15
+    steps:
+      #
+      # Setup
+      #
+
+      - name: "Checkout Project"
+        uses: actions/checkout@v2
+
+      - name: "Select latest Xcode 12"
+        uses: devbotsxyz/xcode-select@master
+        with:
+          version: "12"
+
+      - name: "Import Certificate: Development"
+        uses: devbotsxyz/import-signing-certificate@main
+        with:
+          certificate-data: ${{ secrets.DEVELOPMENT_CERTIFICATE_DATA }}
+          certificate-passphrase: ${{ secrets.DEVELOPMENT_CERTIFICATE_PASSPHRASE }}
+          keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
+
+      - name: "Import Certificate: Distribution"
+        uses: devbotsxyz/import-signing-certificate@main
+        with:
+          certificate-data: ${{ secrets.DISTRIBUTION_CERTIFICATE_DATA }}
+          certificate-passphrase: ${{ secrets.DISTRIBUTION_CERTIFICATE_PASSPHRASE }}
+          keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
+
+      #
+      # Fail early on tests.
+      #
+
+      - name: "Test"
+        uses: devbotsxyz/xcode-test@v1
+
+      #
+      # Do a developer build that we archive into an .xcarchive.
+      #
+
+      - name: "Archive"
+        uses: devbotsxyz/xcode-archive@v1
+
